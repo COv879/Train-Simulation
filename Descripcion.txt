@@ -1,0 +1,38 @@
+Se le solicita crear un simulador de la red metro, la cual es descrita como sigue:
+Existe una red de metro que contienen diferentes líneas, cada línea tiene estaciones. Por estas estaciones se desplazan trenes en ambas direcciones, los cuales, al llegar al final de una línea, retornan por la misma, pero en sentido contrario.
+Existen estaciones comunes. Cada tren tiene una capacidad máxima de pasajeros a transportar, al igual que la estación tiene un límite de pasajeros en espera.
+
+
+La simulación se realizará de la siguiente forma:
+
+    • Se dibuja el estado actual de la red, indicando las posiciones de los trenes, la cantidad de personas que llevan y la cantidad de personas en las estaciones.
+    • Se determina de manera aleatoria cuantas personas bajarán de cada tren.
+    • En las estaciones no comunes, todas las personas que se bajan del tren salen de la estación.
+    • En las estaciones comunes la mitad de las personas que salen del tren se van a la otra línea.
+    • Se suben al tren todas las personas que pueden hasta llenar la capacidad.
+    • Llegan una cantidad de personas aleatoria a cada estación (0-50).
+    • Se mueven los trenes una estación.
+    • Se repite el proceso una vez que el usuario escriba “s” (por siguiente).
+    • Se termina el proceso una vez que el usuario escriba “x”.
+    • Al cerrar se muestra el número de pasajeros que ingresaron al metro, cuantos se transportó durante la simulación, el número de ciclos de la simulación y las estaciones más visitada y menos visitada.
+
+
+La configuración de la línea se debe leer desde un archivo “red.metro” con el siguiente formato:
+[nombre_red]
+-[línea1]:[estaciónA]_#/#(*+#/#-#/#)>[estaciónB]_#/#(*+#/#-#/#)>[estaciónComún]_#/# >…
+-[línea2]:[estaciónC]_#/#(*+#/#-#/#)>[estaciónD]_#/#(*+#/#-#/#)>[estaciónComún]_#/#>…
+…
+-[líneaN]:…
+
+Donde * significa que existe un tren en esa estación y #/# es la capacidad total vs la capacidad actual tanto de la estación y del tren (según corresponda). + y – Indican la dirección del tren.
+
+
+Archivo de ejemplo:
+Red de metro de Santiago
+-Línea Roja (Línea 1):Baquedano_500/300*+100/40-100/50>Universidad Católica_400/100*+100/20>Santa Lucía_400/50*-100/60>Universidad de Chile_500/300*+150/100>La Moneda_450/200*+75/10>Los Héroes_500/250*-100/20>República_400/300*-100/20
+-Línea Verde (Línea 5):Parque Bustamante_300/50*+100/15-100/50>Baquedano_600/400*-150/45>Bellas Artes_400/20*-150/60>Plaza de Armas_500/200*+150/48>Santa Ana_600/350*+150/100
+-Línea Amarilla (Línea 2):Toesca_300/200*+80/20-150/40>Los Héroes_500/400*+100/20>Santa Ana_500/200*-100/20>Cal y Canto_400/200
+
+Esto quiere decir que existe una red, llamada red de metro de Santiago que tiene 3 líneas. Cada línea tiene conexión con las otras (Baquedano (1-5), Los Héroes (1-2) y Santa Ana (2-5)).
+Existen trenes en movimiento en las estaciones, por ejemplo, en Baquedano, línea roja (Baquedano_500/300*+100/40-100/50), existe una capacidad de 500 personas en la estación, pero hay 300 esperando subir al tren.
+En la misma estación actualmente hay 2 trenes, cada uno en una dirección diferente, el primero con capacidad de 100 personas pero que tiene solamente 40 pasajeros y el otro con capacidad de 100 personas y 50 pasajeros.

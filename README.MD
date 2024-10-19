@@ -1,3 +1,13 @@
 # Train-Simulation (WIP)
 
-It's a small project made in Java to simulate, in a simple way, the Metro Subway System.
+It's a small project currently worked on using Java to simulate, in a simple way, the Metro Subway System.
+
+## Instructions
+
+First, you need to load the red.metro file for the program to work and it needs the folowing format(in Spanish):
+
+[nombre_red]
+-[línea1]:[estaciónA]_#/#(*+#/#-#/#)>[estaciónB]_#/#(*+#/#-#/#)>[estaciónComún]_#/# >…
+-[línea2]:[estaciónC]_#/#(*+#/#-#/#)>[estaciónD]_#/#(*+#/#-#/#)>[estaciónComún]_#/#>…
+…
+-[líneaN]:…
